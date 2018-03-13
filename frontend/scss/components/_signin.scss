@@ -1,0 +1,6 @@
+.signin {
+  @include signup-signin;
+  @include e(error) {
+    color: $color-error;
+  }
+}

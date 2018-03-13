@@ -1,0 +1,65 @@
+/*************************************
+  Flexbox
+*************************************/
+%flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*************************************
+  main-nav-li
+*************************************/
+%main-nav-li {
+  font-size: 1.1*$font-size--base;
+  margin-bottom: 15px;
+}
+
+/*************************************
+  main-nav-li
+*************************************/
+%button {
+  font-size: 1.1*$font-size--base;
+  color: $white;
+  border-radius: 5px;
+  background-color: $color-button-background;
+  padding: 5px 0;
+}
+
+
+/*************************************
+  Signup Signin
+*************************************/
+@mixin signup-signin {
+  padding-top: 50px;
+  @include e(form) {
+    @extend %flexbox;
+    font-size: $font-size--base;
+    width: 100%;
+  }
+  @include e(input-div) {
+    width: 60%;
+    label {
+      display: block;
+    }
+    input {
+      border: solid 1px $grey;
+      width: 100%;
+      padding: 5px 2px;
+    }
+    margin-bottom: 20px;
+  }
+  @include e(button) {
+    @extend %button;
+    margin-top: 10px;
+    padding: 5px 0;
+    width: 60%;
+  }
+  @include mq(med) {
+    @include e(form) {
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
